@@ -431,7 +431,6 @@ class Client
         $request->setOption(CURLOPT_URL, $url);
         $request->setOption(CURLOPT_HTTPHEADER, $headers);
         $request->setOption(CURLOPT_USERAGENT, $this->userAgent);
-        $request->setOption(CURLOPT_POST, true);
         $request->setOption(CURLOPT_CUSTOMREQUEST, strtoupper($method));
 
         return $this->_executeRequest($request);
@@ -488,7 +487,7 @@ class Client
     private function _validateConfigParameters()
     {
         foreach ($this->config as $k => $v) {
-            if (is_null($v) && $k !== "accessToken") {
+            if (is_null($v) && $k !== "accessToken" && $k !== "refreshToken") {
                 $this->_logAndThrow("Missing required parameter '{$k}'.");
             }
             switch ($k) {
@@ -510,8 +509,10 @@ class Client
                     }
                     break;
                 case "refreshToken":
-                    if (!preg_match("/^Atzr(\||%7C|%7c).*$/", $v)) {
-                        $this->_logAndThrow("Invalid parameter value for refreshToken.");
+                    if (!is_null($v)) {
+                        if (!preg_match("/^Atzr(\||%7C|%7c).*$/", $v)) {
+                            $this->_logAndThrow("Invalid parameter value for refreshToken.");
+                        }
                     }
                     break;
                 case "sandbox":

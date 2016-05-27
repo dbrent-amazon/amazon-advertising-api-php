@@ -9,7 +9,26 @@ cURL >= 7.18
 
 ## Documentation
 
-Link coming soon.
+Access request and documentation can be found [here](https://advertising.amazon.com/sponsored-products/API).
+
+## Sandbox self-service
+Registering for testing is sandbox is self-service. The `registerProfile` API call can be made to do so. Make sure you instantiate the client in `sandbox` mode before making this call or it will fail.
+<br/><br/>
+The following country codes are available.
+<br/>
+> US, CA, UK, DE, FR, ES, IT, IN, CN, JP<br/>
+
+```PHP
+$client->registerProfile(array("countryCode" => "IT"));
+```
+>
+```
+{
+  "registerProfileId": "5cf1aca5-4ab8-4489-8c33-013d1f85c586JP",
+  "status": "IN_PROGRESS",
+  "statusDetails": "Registration workflow has been started"
+}
+```
 
 ## Quick Start
 #### Instantiate the client

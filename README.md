@@ -12,9 +12,9 @@ cURL >= 7.18
 Access request and documentation can be found [here](https://advertising.amazon.com/sponsored-products/API).
 
 ## Sandbox self-service
-Registering for testing is sandbox is self-service. The `registerProfile` API call can be made to do so. Make sure you instantiate the client in `sandbox` mode before making this call or it will fail.
+If you would like to test the API in sandbox you will need to register a profile for the region in which you would like to test. The `registerProfile` API call can be made to do this. Make sure you instantiate the client in `sandbox` mode before making this call or it will fail.
 <br/><br/>
-The following country codes are available.
+The following country codes are available for testing.
 <br/>
 > US, CA, UK, DE, FR, ES, IT, IN, CN, JP<br/>
 

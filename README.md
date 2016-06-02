@@ -9,7 +9,7 @@ cURL >= 7.18
 
 ## Documentation
 
-Access request and documentation can be found [here](https://advertising.amazon.com/sponsored-products/API).
+Access request and documentation can be found [here](https://advertising.amazon.com/API).
 
 ## Sandbox self-service
 If you would like to test the API in sandbox you will need to register a profile for the region in which you would like to test. The `registerProfile` API call can be made to do this. Make sure you instantiate the client in `sandbox` mode before making this call or it will fail.

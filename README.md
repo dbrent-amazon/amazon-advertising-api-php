@@ -1,4 +1,4 @@
-I am no longer maintaining the repo here. Please use https://github.com/amzn/amazon-advertising-api-php-sdk instead. I will be making all future updates to the official repo.
+I am no longer maintaining this repo. Please use https://github.com/amzn/amazon-advertising-api-php-sdk instead. I will be making all future updates to the official repo.
 
 ## Synopsis
 
